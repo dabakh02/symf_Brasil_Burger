@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block  content_for_layout %}
+
+    <h3>NOS MENUS <BR><span class="badge" style="background-color:#FE8A01 ;">New Recipes</span></h3>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+        {% for data in datas %}
+
+                <div class="card" style="width: 18rem;">
+                <img src="{{asset(data.image)}}" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color:#FE8A01 ;">
+                        <h5 class="card-title"style="color:white ;">{{data.nom}}</h5>
+                        <p class="card-text"style="color:white;  padding-left:5px; background-color:#774610;">Brasil Burger</p>
+                    
+                        <a href="#" class="btn btn-dark">Ajouter</a>
+                        <a href="#" class="btn btn-dark">Details</a>
+                        <div style="display: inline-block;">
+                        <br>
+                            <a href="#" class="btn btn-info btn-circle btn-sm">
+                                <i class="fas fa-minus"></i>
+                            </a>
+                            <span style=" background-color:white">02</span>
+                            <a href="#" class="btn btn-info btn-circle btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock  content_for_layout %}

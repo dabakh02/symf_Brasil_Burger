@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block  content_for_layout %}
+
+<!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Gestion des Commandes</h1>
+        
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h4 class="m-0 font-weight-bold" style="color:orange;">Liste des Commandes</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead style="background-color:orange; color:white;">
+                            <tr>
+                                <th>Numero de Commande</th>
+                                <th>Nom du Produit</th>
+                                <th>Quantité</th>
+                                <th>Prix</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot style="background-color:orange; color:white;">
+                            <tr>
+                                <th>Numero de Commande</th>
+                                <th>Nom du Produit</th>
+                                <th>Quantite</th>
+                                <th>Prix</th>
+                                <th>Actions</th>
+                            </tr>
+                        </tfoot>
+                        <tbody style="background-color:rgb(158, 159, 168); color:black;">
+                         {% for data in datas %}
+                            <tr>
+                                <td>{{data.Numero}}</td>
+                                <td>{{data.NomProduit}}</td>
+                                <td>{{data.Quantite}}</td>
+                                <td>{{data.Prix}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary">Détails</button>
+                                    <button type="button" class="btn btn-danger">Annuler</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- /.container-fluid -->
+
+
+
+
+{% endblock  content_for_layout %}
